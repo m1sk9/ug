@@ -34,7 +34,8 @@ jobs:
       - name: Run test
         run: cargo test --verbose
   build:
-    runs-on: ${{ matrix.job.os || 'ubuntu-latest' }}c
+    name: Build (${{ matrix.job.target }})
+    runs-on: ${{ matrix.job.os || 'ubuntu-latest' }}
     needs: check
     strategy:
       fail-fast: false
